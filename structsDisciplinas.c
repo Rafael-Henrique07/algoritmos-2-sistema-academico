@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "cadastroDisciplinas.h"
 
 // DESENVOLVER TODAS AS FUNÇÕES DECLARADAS NO ARQUIVO DE CABEÇALHO cadastroDisciplinas.h
