@@ -1,0 +1,25 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compilar programa C",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "-Wall",
+                "-Wextra",
+                "-g3",
+                "${file}",
+                "-o",
+                "${fileDirname}\\output\\${fileBasenameNoExtension}.exe",
+                "-mconsole"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Compila um arquivo C com o GCC e cria o executável na pasta output."
+        }
+    ]
+}
