@@ -5,7 +5,7 @@
 
 // DESENVOLVER TODAS AS FUNÇÕES DECLARADAS NO ARQUIVO DE CABEÇALHO cadastroDisciplinas.h
 
-/*Fun��es para cadastro*/
+// Funções para cadastro
 void cadastrarAluno(tds_aluno vetorAlunos[], int posicao) {
     // Implementação da função para cadastrar aluno
     printf("\n=== CADASTRO DE ALUNO ===\n");
@@ -31,7 +31,7 @@ void cadastrarAluno(tds_aluno vetorAlunos[], int posicao) {
     printf("Aluno cadastrado com sucesso!\n");
 }
 
-/*Função para cadastrar disciplina*/
+// Função para cadastrar disciplina
 void cadastrarDisciplina(tds_disciplina vetorDisciplinas[], int posicao) {
     printf("\n=== CADASTRO DE DISCIPLINA ===\n");
 
@@ -49,11 +49,11 @@ void cadastrarDisciplina(tds_disciplina vetorDisciplinas[], int posicao) {
 void cadastrarMatricula(tds_matricula[], int, tds_aluno[], int, tds_disciplina[], int);
 void cadastrarCompromisso(tds_compromisso*, int*, tds_aluno*, int);
 
-/*Fun��es para valida��o de dados*/
+// Funções para validação de dados
 int verificaData(tds_data*);
 int verificaHorario(tds_hora*);
 
-/*FUnção para validar email*/
+// Função para validar email
 int verificarEmail(char email[]) {
     int possuiArroba = 0;
     int possuiPonto = 0;
@@ -74,21 +74,21 @@ int verificarEmail(char email[]) {
 }
 
 
-/*Fun��es para impress�o*/
+// Funções para impressão
 void imprimeVetorDeALunos(tds_aluno[], int);
 
 
-/*Fun��es de busca*/
+// Funções de busca
 int encontrarAluno(tds_aluno*, int, int);
 int encontrarDisciplina(tds_disciplina*, int,int);
 int procurarData(tds_compromisso*, int, tds_data*, int);
 int procurarHorario(tds_compromisso*, int, tds_hora*, tds_data*, int);
 
-/*Fun��es opcionais*/
+// Funções opcionais
 void lerHorario(tds_hora*);
 void lerData(tds_data*);
 
-/*Funções para menu*/
+// Funções para menu
 int menuCompromissos() {
 
     printf("\n=== MENU DE COMPROMISSOS ===\n");
@@ -165,7 +165,7 @@ int menu() {
     return opcao;
 }
 
-/*FUnção para alocação dinâmica*/
+// Função para alocação dinâmica
 tds_aluno* alocaVetorAluno(int tamanhoInicial) {
     tds_aluno *vetor = malloc(tamanhoInicial * sizeof(tds_aluno));
     if (vetor == NULL) {
@@ -193,7 +193,7 @@ tds_compromisso* alocaVetorCompromisso(int tamanhoInicial) {
     return vetor;
 }
 
-/*Funções para realocação dinâmica*/
+// Funções para realocação dinâmica
 tds_aluno* realocaVetorAluno(tds_aluno* vetor, int novoTamanho) {
     tds_aluno* novoVetor = realloc(vetor, novoTamanho * sizeof(tds_aluno));
     if (novoVetor == NULL) {

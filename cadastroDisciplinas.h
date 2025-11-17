@@ -37,46 +37,60 @@ typedef struct {
     char descricao[300];
 } tds_compromisso;
 
-/*Funções para cadastro*/
+// Funções para cadastro
 void cadastrarAluno(tds_aluno[], int);
 void cadastrarDisciplina(tds_disciplina[], int);
 void cadastrarMatricula(tds_matricula[], int, tds_aluno[], int, tds_disciplina[], int);
 void cadastrarCompromisso(tds_compromisso*, int*, tds_aluno*, int);
 
-/*Funções para validação de dados*/
+// Funções para validação de dados
 int verificaData(tds_data*);
 int verificaHorario(tds_hora*);
 int verificarEmail(char email[]);
 
 
-/*Funções para impressão*/
+// Funções para impressão
 void imprimeVetorDeALunos(tds_aluno[], int);
 
 
-/*Funções de busca*/
+// Funções de busca
 int encontrarAluno(tds_aluno*, int, int);
 int encontrarDisciplina(tds_disciplina*, int,int);
 int procurarData(tds_compromisso*, int, tds_data*, int);
 int procurarHorario(tds_compromisso*, int, tds_hora*, tds_data*, int);
 
-/*Funções opcionais*/
+// Funções opcionais
 void lerHorario(tds_hora*);
 void lerData(tds_data*);
 
-/*Funções para Menu*/
+// Funções para Menu
 int menuCompromissos();
 int menu();
 
-/*Funções para Alocação Dinâmica*/
+// Funções para Alocação Dinâmica
 tds_aluno* alocaVetorAluno(int tamanhoInicial);
 tds_disciplina* alocaVetorDisciplina(int tamanhoInicial);
 tds_matricula* alocaVetorMatricula(int tamanhoInicial);
 tds_compromisso* alocaVetorCompromisso(int tamanhoInicial);
 
-/*Funções para Realocação Dinâmica*/
+// Funções para Realocação Dinâmica
 tds_aluno* realocaVetorAluno(tds_aluno* vetor, int novoTamanho);
 tds_disciplina* realocaVetorDisciplina(tds_disciplina* vetor, int novoTamanho);
 tds_matricula* realocaVetorMatricula(tds_matricula* vetor, int novoTamanho);
 tds_compromisso* realocaVetorCompromisso(tds_compromisso* vetor, int novoTamanho);
+
+// Funções de relatórios e ordenação
+int comparaAlunoRA(const void *a, const void *b);
+int comparaCompromissoDataHora(const void *a, const void *b);
+int comparaCompromissoRADataHora(const void *a, const void *b);
+int comparaCompromissoHoraRA(const void *a, const void *b);
+int comparaCompromissoDataHoraRA(const void *a, const void *b);
+
+void imprimirCompromissosAluno(tds_compromisso *compromissos, int n, int ra_aluno);
+void imprimirCompromissosTodos(tds_compromisso *compromissos, int n);
+void imprimirCompromissosData(tds_compromisso *compromissos, int n, tds_data data);
+void imprimirCompromissosTodasDatas(tds_compromisso *compromissos, int n);
+void imprimirDadosAluno(tds_aluno *alunos, int n, int ra);
+void imprimirTodosAlunos(tds_aluno *alunos, int n);
 
 #endif // cadastroDisciplinas_h
