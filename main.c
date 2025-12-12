@@ -17,7 +17,7 @@ int main() {
     int tamCompromissos = 0, capCompromissos = 15;
     
     alunos = alocaVetorAluno(capAlunos);
-    disciplinas = malloc(capDisciplinas * sizeof(tds_disciplina));
+    disciplinas = alocaVetorDisciplina(capDisciplinas);
     matriculas = alocaVetorMatricula(capMatriculas);
     compromissos = alocaVetorCompromisso(capCompromissos);
     
